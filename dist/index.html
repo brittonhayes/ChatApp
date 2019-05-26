@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<!-- Primary Meta Tags -->
+		<title>Chat App</title>
+		<meta name="title" content="Chat App">
+		<meta name="description" content="A realtime chat app using Socket.io">
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="localhost">
+		<meta property="og:title" content="Chat App">
+		<meta property="og:description" content="A realtime chat app using Socket.io">
+		<meta property="og:image" content="">
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="">
+		<meta property="twitter:title" content="Chat App">
+		<meta property="twitter:description" content="A realtime chat app using Socket.io">
+		<meta property="twitter:image" content="">
+		<!-- Stylesheets -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+		<script defer="" src="http://localhost:3000/socket.io/socket.io.js"></script>
+		<script defer="" src="/js.00a46daa.js"></script>
+	<link rel="stylesheet" href="/js.00a46daa.css"></head>
+	<body>
+		<nav></nav>
+		<header>
+			<span>
+				<i class="fab fa-2x fa-discord"></i>
+			</span>
+			<h2>Dipcord</h2>
+		</header>
+		<aside>
+			<p>Buddies</p>
+			<hr>
+			<figure>
+				<img src="https://api.adorable.io/avatars/face/eyes1/nose3/mouth4/f6d55c/275/" alt="">
+			</figure>
+			<figure>
+				<img src="https://api.adorable.io/avatars/face/eyes9/nose1/mouth6/ae54a3/275/" alt="">
+			</figure>
+			<figure>
+				<img src="https://api.adorable.io/avatars/face/eyes2/nose7/mouth4/3caea3/275/" alt="">
+			</figure>
+			<figure>
+				<img src="https://api.adorable.io/avatars/face/eyes8/nose2/mouth3/ed553b/275/" alt="">
+			</figure>
+			<figure>
+				<img src="https://api.adorable.io/avatars/face/eyes1/nose4/mouth9/20639b/275/" alt="">
+			</figure>
+			<figure>
+				<img src="https://api.adorable.io/avatars/face/eyes5/nose5/mouth9/900c3f/275/" alt="">
+			</figure>
+			<hr>
+			<div id="friends-etc"><p>&#8230;</p></div>
+		</aside>
+		<main>
+			<div id="message-container"></div>
+			<form id="send-container" autocomplete="off">
+				<input type="text" id="message-input">
+				<button type="submit" id="send-button">SEND</button>
+			</form>
+		</main>
+		<footer></footer>
+	</body>
+</html>

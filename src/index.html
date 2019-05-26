@@ -27,9 +27,12 @@
 		/>
 		<meta property="twitter:image" content="" />
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="css/main.min.css" />
 		<link
 			href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap"
 			rel="stylesheet"
 		/>
 		<link
@@ -39,16 +42,61 @@
 			crossorigin="anonymous"
 		/>
 		<script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
-		<script defer src="js/script.js"></script>
+		<script defer src="js/index.js"></script>
 	</head>
 	<body>
 		<nav></nav>
 		<header>
-			<h2>Chatly.io</h2>
+			<span>
+				<i class="fab fa-2x fa-discord"></i>
+			</span>
+			<h2>Dipcord</h2>
 		</header>
+		<aside>
+			<p>Buddies</p>
+			<hr />
+			<figure>
+				<img
+					src="https://api.adorable.io/avatars/face/eyes1/nose3/mouth4/f6d55c/275/"
+					alt=""
+				/>
+			</figure>
+			<figure>
+				<img
+					src="https://api.adorable.io/avatars/face/eyes9/nose1/mouth6/ae54a3/275/"
+					alt=""
+				/>
+			</figure>
+			<figure>
+				<img
+					src="https://api.adorable.io/avatars/face/eyes2/nose7/mouth4/3caea3/275/"
+					alt=""
+				/>
+			</figure>
+			<figure>
+				<img
+					src="https://api.adorable.io/avatars/face/eyes8/nose2/mouth3/ed553b/275/"
+					alt=""
+				/>
+			</figure>
+			<figure>
+				<img
+					src="https://api.adorable.io/avatars/face/eyes1/nose4/mouth9/20639b/275/"
+					alt=""
+				/>
+			</figure>
+			<figure>
+				<img
+					src="https://api.adorable.io/avatars/face/eyes5/nose5/mouth9/900c3f/275/"
+					alt=""
+				/>
+			</figure>
+			<hr />
+			<div id="friends-etc"><p>&#8230;</p></div>
+		</aside>
 		<main>
 			<div id="message-container"></div>
-			<form id="send-container">
+			<form id="send-container" autocomplete="off">
 				<input type="text" id="message-input" />
 				<button type="submit" id="send-button">SEND</button>
 			</form>

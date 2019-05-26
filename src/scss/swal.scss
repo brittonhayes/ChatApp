@@ -1,0 +1,10 @@
+.swal2-styled {
+	margin: 0 0.3125em !important;
+	padding: 0.3125em 0.625em !important;
+	font-size: 1em !important;
+
+	&:focus {
+		box-shadow: 0 0 0 0.0625em rgba($color: #252525, $alpha: 0.7),
+			0 0 0 0.125em rgba(50, 100, 150, 0.4) !important;
+	}
+}

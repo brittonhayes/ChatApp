@@ -1,26 +1,10 @@
+import Swal from "sweetalert2";
 const socket = io("http://localhost:3000");
 const messageContainer = document.getElementById("message-container");
 const messageForm = document.getElementById("send-container");
 const messageInput = document.getElementById("message-input");
-// import Swal from "sweetalert2";
 
-const name = prompt("What is your name?");
-
-// const name = swal(
-// 	{
-// 		title: "Hey there!",
-// 		text: "Please enter your name.",
-// 		type: "input",
-// 		showCancelButton: false,
-// 		closeOnConfirm: false
-// 	},
-// 	name => {
-// 		if (!name) {
-// 			swal.close();
-// 			return;
-// 		}
-// 	}
-// );
+// const name = prompt("What is your name?");
 
 if (name != null) {
 	appendMessage("You have joined the chat");
@@ -35,7 +19,18 @@ if (name != null) {
 	});
 
 	socket.on("user-disconnected", name => {
-		appendMessage(`${name} disconnected`);
+		// appendMessage(`${name} disconnected`);
+		const Toast = Swal.mixin({
+			toast: true,
+			position: "top-end",
+			showConfirmButton: false,
+			timer: 3000
+		});
+
+		Toast.fire({
+			type: "info",
+			title: `${name} disconnected`
+		});
 	});
 
 	messageForm.addEventListener("submit", e => {

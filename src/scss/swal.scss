@@ -1,10 +1,14 @@
-.swal2-styled {
-	margin: 0 0.3125em !important;
-	padding: 0.3125em 0.625em !important;
-	font-size: 1em !important;
+.swal2-popup.swal2-toast {
+	box-shadow: 0 0 0.625em rgba($color: #000000, $alpha: 0.6) !important;
+	opacity: 0.92;
+}
 
-	&:focus {
-		box-shadow: 0 0 0 0.0625em rgba($color: #252525, $alpha: 0.7),
-			0 0 0 0.125em rgba(50, 100, 150, 0.4) !important;
-	}
+.swal2-title {
+	color: white !important;
+	text-transform: uppercase !important;
+}
+
+.swal2-warning {
+	color: rgb(233, 70, 70) !important;
+	border-color: rgb(233, 70, 70) !important;
 }

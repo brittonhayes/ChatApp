@@ -1,10 +1,16 @@
-.swal2-styled {
-  margin: 0 0.3125em !important;
-  padding: 0.3125em 0.625em !important;
-  font-size: 1em !important;
+.swal2-popup.swal2-toast {
+  box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.6) !important;
+  opacity: 0.92;
 }
-.swal2-styled:focus {
-  box-shadow: 0 0 0 0.0625em rgba(37, 37, 37, 0.7), 0 0 0 0.125em rgba(50, 100, 150, 0.4) !important;
+
+.swal2-title {
+  color: white !important;
+  text-transform: uppercase !important;
+}
+
+.swal2-warning {
+  color: #e94646 !important;
+  border-color: #e94646 !important;
 }
 
 * {
@@ -27,13 +33,20 @@ body header {
   background-color: #23272a;
 }
 body header span {
-  width: 24px;
-  height: 24px;
+  width: 48px;
+  height: 48px;
   margin: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #7289da;
+  transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+body header span i {
+  color: #7289da;
+}
+body header span:hover {
+  transform: scale(1.5);
+  margin-right: 20px;
 }
 body header h2 {
   font-family: "Fredoka One", cursive;
@@ -88,10 +101,10 @@ body aside img {
   width: 60px;
   border-radius: 80px;
   border: 3px solid #2c2f33;
-  transition: transform 200ms cubic-bezier(0.03, 1.16, 0.7, 1.07);
+  transition: transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 body aside img:hover {
-  transform: scale(1.05);
+  transform: scale(1.2);
   cursor: pointer;
   border: 3px solid #7289da;
   border-radius: 10px;
@@ -177,6 +190,23 @@ body #message-container .myMessage:after {
   transform: scale(-1, 1);
   margin-left: -0.594em;
   margin-bottom: -1.187em;
+}
+body #message-container .statusMessage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #99aab5;
+  height: 30px;
+}
+body #message-container .statusMessage::before {
+  content: "~";
+  margin-right: 10px;
+}
+body #message-container .statusMessage::after {
+  content: "~";
+  margin-left: 10px;
 }
 body #send-container {
   margin: 1em;

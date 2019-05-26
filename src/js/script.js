@@ -4,7 +4,13 @@ const messageContainer = document.getElementById("message-container");
 const messageForm = document.getElementById("send-container");
 const messageInput = document.getElementById("message-input");
 
-// const name = prompt("What is your name?");
+const name = prompt("What is your name?");
+const Toast = Swal.mixin({
+	toast: true,
+	position: "top-end",
+	showConfirmButton: false,
+	timer: 3000
+});
 
 if (name != null) {
 	appendMessage("You have joined the chat");
@@ -15,21 +21,17 @@ if (name != null) {
 	});
 
 	socket.on("user-connected", name => {
-		appendMessage(`${name} connected`);
+		appendStatus(`${name} connected`);
 	});
 
 	socket.on("user-disconnected", name => {
-		// appendMessage(`${name} disconnected`);
-		const Toast = Swal.mixin({
-			toast: true,
-			position: "top-end",
-			showConfirmButton: false,
-			timer: 3000
-		});
+		appendStatus(`${name} disconnected`);
 
 		Toast.fire({
-			type: "info",
-			title: `${name} disconnected`
+			type: "warning",
+			title: `${name} disconnected`,
+			background: "#23272a",
+			color: "#fff"
 		});
 	});
 
@@ -53,6 +55,18 @@ if (name != null) {
 		const messageElement = document.createElement("div");
 		messageElement.setAttribute("class", "myMessage");
 		messageElement.innerText = message;
+		messageContainer.append(messageElement);
+		messageContainer.scrollBy(0, 100);
+	}
+
+	function appendStatus(message) {
+		const messageElement = document.createElement("div");
+		messageElement.setAttribute("class", "statusMessage");
+		var d = new Date();
+		var n = d.toLocaleString();
+		messageElement.innerText = message;
+		messageElement.innerHTML += " @ " + n;
+
 		messageContainer.append(messageElement);
 		messageContainer.scrollBy(0, 100);
 	}

@@ -49,13 +49,21 @@ body {
 		background-color: $background-primary;
 
 		span {
-			width: 24px;
-			height: 24px;
+			width: 48px;
+			height: 48px;
 			margin: 8px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			background-color: $primary;
+			transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			i {
+				color: $primary;
+			}
+
+			&:hover {
+				transform: scale(1.5);
+				margin-right: 20px;
+			}
 		}
 
 		h2 {
@@ -122,9 +130,9 @@ body {
 			width: 60px;
 			border-radius: 80px;
 			border: 3px solid $background-secondary;
-			transition: transform 200ms cubic-bezier(0.03, 1.16, 0.7, 1.07);
+			transition: transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 			&:hover {
-				transform: scale(1.05);
+				transform: scale(1.2);
 				cursor: pointer;
 				border: 3px solid $primary;
 				border-radius: 10px;
@@ -211,6 +219,23 @@ body {
 				transform: scale(-1, 1);
 				margin-left: -0.594em;
 				margin-bottom: -1.187em;
+			}
+		}
+		.statusMessage {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			color: $secondary;
+			height: 30px;
+			&::before {
+				content: "~";
+				margin-right: 10px;
+			}
+			&::after {
+				content: "~";
+				margin-left: 10px;
 			}
 		}
 	}

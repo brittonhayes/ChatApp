@@ -2990,7 +2990,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var socket = io("http://localhost:3000");
 var messageContainer = document.getElementById("message-container");
 var messageForm = document.getElementById("send-container");
-var messageInput = document.getElementById("message-input"); // const name = prompt("What is your name?");
+var messageInput = document.getElementById("message-input");
+var name = prompt("What is your name?");
+
+var Toast = _sweetalert.default.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000
+});
 
 if (name != null) {
   var appendMessage = function appendMessage(message) {
@@ -3009,26 +3017,32 @@ if (name != null) {
     messageContainer.scrollBy(0, 100);
   };
 
+  var appendStatus = function appendStatus(message) {
+    var messageElement = document.createElement("div");
+    messageElement.setAttribute("class", "statusMessage");
+    var d = new Date();
+    var n = d.toLocaleString();
+    messageElement.innerText = message;
+    messageElement.innerHTML += " @ " + n;
+    messageContainer.append(messageElement);
+    messageContainer.scrollBy(0, 100);
+  };
+
   appendMessage("You have joined the chat");
   socket.emit("new-user", name);
   socket.on("chat-message", function (data) {
     appendMessage("".concat(data.name, ": ").concat(data.message));
   });
   socket.on("user-connected", function (name) {
-    appendMessage("".concat(name, " connected"));
+    appendStatus("".concat(name, " connected"));
   });
   socket.on("user-disconnected", function (name) {
-    // appendMessage(`${name} disconnected`);
-    var Toast = _sweetalert.default.mixin({
-      toast: true,
-      position: "top-end",
-      showConfirmButton: false,
-      timer: 3000
-    });
-
+    appendStatus("".concat(name, " disconnected"));
     Toast.fire({
-      type: "info",
-      title: "".concat(name, " disconnected")
+      type: "warning",
+      title: "".concat(name, " disconnected"),
+      background: "#23272a",
+      color: "#fff"
     });
   });
   messageForm.addEventListener("submit", function (e) {

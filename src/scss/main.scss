@@ -35,8 +35,6 @@ $message-text: rgba(255, 255, 255, 0.596);
 }
 
 body {
-	// width: 100vw;
-	// height: 100vh;
 	overflow: hidden;
 
 	header {
@@ -47,11 +45,13 @@ body {
 		height: 6vh;
 		color: $title;
 		background-color: $background-primary;
-
 		span {
-			width: 48px;
-			height: 48px;
-			margin: 8px;
+			img {
+				width: 48px !important;
+				height: 48px;
+				margin: 8px;
+			}
+
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -74,7 +74,6 @@ body {
 	aside {
 		width: 100px;
 		height: 100%;
-
 		background-color: $background-primary;
 		position: absolute;
 		display: flex;

@@ -1,0 +1,158 @@
+$background-primary: rgba(
+	$color: #23272a,
+	$alpha: 1
+);
+$background-secondary: rgba(
+	$color: #2c2f33,
+	$alpha: 1
+);
+$background-secondary-light: rgba(
+	$color: #34383d,
+	$alpha: 0.7
+);
+
+$primary: rgba(
+	$color: #7289da,
+	$alpha: 1
+);
+$secondary: rgba(
+	$color: #99aab5,
+	$alpha: 1
+);
+$title: rgb(255, 255, 255);
+$message-text: rgba(255, 255, 255, 0.596);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+
+	header {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 1em;
+		height: 6vh;
+		background-color: $background-primary;
+
+		h2 {
+			color: $title;
+		}
+	}
+
+	main {
+		width: 100%;
+		height: 100%;
+		background-color: $background-secondary;
+	}
+
+	#message-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding: 1em;
+		width: 100%;
+		height: 80%;
+		max-height: 80vh;
+		overflow-y: scroll;
+
+		.message {
+			position: relative;
+			background: $primary;
+			border-radius: 0.4em;
+			min-width: 150px;
+			max-width: 300px;
+			word-wrap: break-word;
+			padding: 1em;
+			margin: 15px;
+			color: white;
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 20%;
+				width: 0;
+				height: 0;
+				border: 1.188em solid transparent;
+				border-top-color: $primary;
+				border-bottom: 0;
+				border-left: 0;
+				margin-left: -0.594em;
+				margin-bottom: -1.187em;
+			}
+		}
+		.myMessage {
+			display: flex;
+			flex-direction: column;
+			align-self: flex-end;
+			min-width: 150px;
+			max-width: 300px;
+			word-wrap: break-word;
+			position: relative;
+			background: $secondary;
+			border-radius: 0.4em;
+			padding: 1em;
+			margin: 15px;
+			color: white;
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 80%;
+				width: 0;
+				height: 0;
+				border: 1.188em solid transparent;
+				border-top-color: $secondary;
+				border-bottom: 0;
+				border-left: 0;
+				transform: scale(-1, 1);
+				margin-left: -0.594em;
+				margin-bottom: -1.187em;
+			}
+		}
+	}
+
+	#send-container {
+		margin: 1em;
+		height: 3.5em;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		#message-input {
+			height: 100%;
+			flex-grow: 10;
+			padding: 1em;
+			background-color: $background-secondary;
+			filter: brightness(150%);
+			border-radius: 10px 0px 0px 10px;
+			border: none;
+			color: $message-text;
+		}
+		#send-button {
+			height: 100%;
+			flex-grow: 1;
+			border-radius: 0px 10px 10px 0px;
+			margin-right: 1em;
+			border: none;
+			background-color: $background-secondary-light;
+			color: $message-text;
+			width: 7em;
+
+			&:hover {
+				cursor: pointer;
+				background-color: gray;
+			}
+		}
+	}
+}

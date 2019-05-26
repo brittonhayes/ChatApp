@@ -1,0 +1,21 @@
+{
+	"name": "chat-app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"devstart": "nodemon server.js",
+		"devbundle": "parcel index.html css/*.min.css js/script.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"socket.io": "^2.2.0",
+		"sweetalert2": "^8.11.6"
+	},
+	"devDependencies": {
+		"nodemon": "^1.19.1",
+		"parcel-bundler": "^1.12.3"
+	}
+}

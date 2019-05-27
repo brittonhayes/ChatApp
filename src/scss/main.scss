@@ -14,3 +14,11 @@
 h2 {
 	font-family: "Fredoka One", cursive;
 }
+
+#logo {
+	transition: transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	&:hover {
+		transform: scale(1.5);
+		margin-right: 20px;
+	}
+}

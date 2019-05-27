@@ -1,0 +1,34 @@
+//* VARIABLES
+$background-primary: rgba(
+	$color: #23272a,
+	$alpha: 1
+);
+$background-secondary: rgba(
+	$color: #2c2f33,
+	$alpha: 1
+);
+$background-secondary-light: rgba(
+	$color: #34383d,
+	$alpha: 0.7
+);
+
+$primary: rgba(
+	$color: #7289da,
+	$alpha: 1
+);
+$secondary: rgba(
+	$color: #99aab5,
+	$alpha: 1
+);
+
+$title: rgba(255, 255, 255, 0.856);
+$message-text: rgba(255, 255, 255, 0.596);
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 992px;
+// Large tablets and desktops
+$screen-xl-min: 1200px;

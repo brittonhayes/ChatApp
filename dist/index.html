@@ -30,12 +30,15 @@
 		<header>
 			<span>
 				<!--<i class="fab fa-2x fa-discord"></i>-->
-				<img src="/dipcord.150d696e.png" alt="">
+				<img id="logo" src="/dipcord.150d696e.png" alt="">
 			</span>
 			<h2>Dipcord</h2>
+			<span id="friends-nav">
+				<i class="fa fa-2x fa-users"></i>
+			</span>
 		</header>
-		<aside>
-			<p>Buddies</p>
+		<aside id="friends-list" class="is-active">
+			<p id="buddies">Buddies</p>
 			<hr>
 			<figure class="room" id="room1">
 				<img src="https://api.adorable.io/avatars/face/eyes1/nose3/mouth4/f6d55c/275/" alt="">
@@ -56,9 +59,9 @@
 				<img src="https://api.adorable.io/avatars/face/eyes5/nose5/mouth9/900c3f/275/" alt="">
 			</figure>
 			<hr>
-			<div id="friends-etc"><p>&#8230;</p></div>
+			<!--<div id="friends-etc"><p>&#8230;</p></div>-->
 		</aside>
-		<main>
+		<main id="main">
 			<div id="message-container"></div>
 			<form id="send-container" autocomplete="off">
 				<input type="text" id="message-input">

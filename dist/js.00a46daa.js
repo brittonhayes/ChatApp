@@ -3057,7 +3057,23 @@ if (name != null) {
     messageInput.value = "";
   });
 }
-},{"sweetalert2":"../node_modules/sweetalert2/dist/sweetalert2.all.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"sweetalert2":"../node_modules/sweetalert2/dist/sweetalert2.all.js"}],"js/rooms.js":[function(require,module,exports) {
+var room1 = document.getElementById("room1");
+var room2 = document.getElementById("room2");
+var room3 = document.getElementById("room3");
+var room4 = document.getElementById("room4");
+var room5 = document.getElementById("room5");
+},{}],"js/view.js":[function(require,module,exports) {
+document.addEventListener("DOMContentLoaded", function () {
+  var friendsNav = document.getElementById("friends-nav");
+  var friendsList = document.getElementById("friends-list");
+  var main = document.getElementById("main");
+  friendsNav.addEventListener("click", function () {
+    friendsList.classList.toggle("nav-active");
+    main.classList.toggle("main-active");
+  });
+});
+},{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -3134,8 +3150,12 @@ module.hot.accept(reloadCSS);
 
 require("./script.js");
 
+require("./rooms.js");
+
+require("./view.js");
+
 require("../scss/main.scss");
-},{"./script.js":"js/script.js","../scss/main.scss":"scss/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./script.js":"js/script.js","./rooms.js":"js/rooms.js","./view.js":"js/view.js","../scss/main.scss":"scss/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

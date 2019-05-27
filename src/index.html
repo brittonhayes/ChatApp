@@ -47,12 +47,15 @@
 		<header>
 			<span>
 				<!--<i class="fab fa-2x fa-discord"></i>-->
-				<img src="images/dipcord.png" alt="" />
+				<img id="logo" src="images/dipcord.png" alt="" />
 			</span>
 			<h2>Dipcord</h2>
+			<span id="friends-nav">
+				<i class="fa fa-2x fa-users"></i>
+			</span>
 		</header>
-		<aside>
-			<p>Buddies</p>
+		<aside id="friends-list" class="is-active">
+			<p id="buddies">Buddies</p>
 			<hr />
 			<figure class="room" id="room1">
 				<img
@@ -91,9 +94,9 @@
 				/>
 			</figure>
 			<hr />
-			<div id="friends-etc"><p>&#8230;</p></div>
+			<!--<div id="friends-etc"><p>&#8230;</p></div>-->
 		</aside>
-		<main>
+		<main id="main">
 			<div id="message-container"></div>
 			<form id="send-container" autocomplete="off">
 				<input type="text" id="message-input" />

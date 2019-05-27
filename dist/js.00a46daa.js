@@ -2987,11 +2987,12 @@ var _sweetalert = _interopRequireDefault(require("sweetalert2"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//? IMPORTS
+//? VARIABLES
 var socket = io("http://localhost:3000");
 var messageContainer = document.getElementById("message-container");
 var messageForm = document.getElementById("send-container");
 var messageInput = document.getElementById("message-input");
-var name = prompt("What is your name?");
 
 var Toast = _sweetalert.default.mixin({
   toast: true,
@@ -2999,6 +3000,9 @@ var Toast = _sweetalert.default.mixin({
   showConfirmButton: false,
   timer: 3000
 });
+
+var is_room1 = false;
+var name = prompt("What is your name?");
 
 if (name != null) {
   var appendMessage = function appendMessage(message) {
@@ -3159,7 +3163,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59978" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54185" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

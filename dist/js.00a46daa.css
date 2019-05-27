@@ -149,6 +149,7 @@ body #message-container .message {
   padding: 1em;
   margin: 15px;
   color: white;
+  filter: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.4));
 }
 body #message-container .message:after {
   content: "";
@@ -177,6 +178,7 @@ body #message-container .myMessage {
   padding: 1em;
   margin: 15px;
   color: white;
+  filter: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.4));
 }
 body #message-container .myMessage:after {
   content: "";
@@ -227,6 +229,11 @@ body #send-container #message-input {
   border-radius: 10px 0px 0px 10px;
   border: none;
   color: rgba(255, 255, 255, 0.596);
+  font-size: 1em;
+}
+body #send-container #message-input:focus {
+  outline: none;
+  border: 2px solid rgba(114, 137, 218, 0.5);
 }
 body #send-container #send-button {
   height: 100%;
@@ -237,10 +244,12 @@ body #send-container #send-button {
   background-color: rgba(52, 56, 61, 0.7);
   color: rgba(255, 255, 255, 0.596);
   width: 7em;
+  font-size: 0.8em;
 }
 body #send-container #send-button:hover {
   cursor: pointer;
-  background-color: gray;
+  border: 3px solid #7289da;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=/js.00a46daa.css.map */

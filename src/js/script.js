@@ -1,16 +1,20 @@
+//? IMPORTS
 import Swal from "sweetalert2";
+
+//? VARIABLES
 const socket = io("http://localhost:3000");
 const messageContainer = document.getElementById("message-container");
 const messageForm = document.getElementById("send-container");
 const messageInput = document.getElementById("message-input");
-
-const name = prompt("What is your name?");
 const Toast = Swal.mixin({
 	toast: true,
 	position: "top-end",
 	showConfirmButton: false,
 	timer: 3000
 });
+
+var is_room1 = false;
+const name = prompt("What is your name?");
 
 if (name != null) {
 	appendMessage("You have joined the chat");
@@ -62,8 +66,8 @@ if (name != null) {
 	function appendStatus(message) {
 		const messageElement = document.createElement("div");
 		messageElement.setAttribute("class", "statusMessage");
-		var d = new Date();
-		var n = d.toLocaleString();
+		const d = new Date();
+		const n = d.toLocaleString();
 		messageElement.innerText = message;
 		messageElement.innerHTML += " @ " + n;
 

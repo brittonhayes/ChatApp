@@ -176,6 +176,7 @@ body {
 			padding: 1em;
 			margin: 15px;
 			color: white;
+			filter: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.4));
 			&:after {
 				content: "";
 				position: absolute;
@@ -204,6 +205,7 @@ body {
 			padding: 1em;
 			margin: 15px;
 			color: white;
+			filter: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.4));
 			&:after {
 				content: "";
 				position: absolute;
@@ -257,6 +259,11 @@ body {
 			border-radius: 10px 0px 0px 10px;
 			border: none;
 			color: $message-text;
+			font-size: 1em;
+			&:focus {
+				outline: none;
+				border: 2px solid rgba($color: $primary, $alpha: 0.5);
+			}
 		}
 		#send-button {
 			height: 100%;
@@ -267,10 +274,11 @@ body {
 			background-color: $background-secondary-light;
 			color: $message-text;
 			width: 7em;
-
+			font-size: 0.8em;
 			&:hover {
 				cursor: pointer;
-				background-color: gray;
+				border: 3px solid $primary;
+				background-color: transparent;
 			}
 		}
 	}
